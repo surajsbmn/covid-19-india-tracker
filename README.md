@@ -1,6 +1,5 @@
 ### Covid-19 India Tracker App
-
-    Simple tracker app for COVID-19 in India created using Ionic, Angular and Capacitor
+Simple tracker app for COVID-19 in India created using Ionic, Angular and Capacitor
 
 ## Getting Started
 
@@ -12,5 +11,4 @@
 * Profit. :tada:
 
 ## Building for Android/iOS/Electron
-
-    Capacitor is installed as part of the project. This project includes the android capacitor build, but you can build for an platform of your choice. Refer the [Capacitor Docs](https://capacitor.ionicframework.com/docs/getting-started/)
+Capacitor is installed as part of the project. This project includes the android capacitor build, but you can build for an platform of your choice. Refer the [Capacitor Docs](https://capacitor.ionicframework.com/docs/getting-started/)
