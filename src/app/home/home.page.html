@@ -10,10 +10,7 @@
   <ion-grid>
     <ion-row>
       <ion-col size-md="6" offset-md="3">
-        <ion-card color="secondary">
-          <ion-card-header>
-            <ion-label></ion-label>
-          </ion-card-header>
+        <ion-card color="warning" style="color: white;">
           <ion-card-content class="ion-text-center">
             <span color="warning" id="confirmed-cases">{{confirmedCases}}</span>
             <br />
@@ -23,11 +20,8 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size-md="6" offset-md="3">
+      <ion-col size-md="6" offset-md="3" size-sm="6">
         <ion-card color="success">
-          <ion-card-header>
-            <ion-label></ion-label>
-          </ion-card-header>
           <ion-card-content class="ion-text-center">
             <span color="warning" id="confirmed-cases">{{recovered}}</span>
             <br />
@@ -35,17 +29,40 @@
           </ion-card-content>
         </ion-card>
       </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size-md="6" offset-md="3">
+    <!-- </ion-row>
+    <ion-row> -->
+      <ion-col size-md="6" offset-md="3" size-sm="6">
         <ion-card color="danger">
-          <ion-card-header>
-            <ion-label></ion-label>
-          </ion-card-header>
           <ion-card-content class="ion-text-center">
             <span color="warning" id="confirmed-cases">{{deaths}}</span>
             <br />
             <ion-label>Deaths</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-content>
+            <canvas responsive="true" #barChart></canvas>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-title class="ion-text-center">Statewise Breakdown</ion-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item *ngFor="let state of stateData">
+                <span>{{state.state}}</span><span slot="end">{{state.totalConfirmed}}</span>
+              </ion-item>
+            </ion-list>
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -56,8 +73,8 @@
   </ion-refresher>
 </ion-content>
 
-<ion-footer>
+<ion-footer style="height: min-content;">
   <ion-toolbar>
-    <ion-label class="ion-margin">Last Updated: </ion-label>
+    <ion-label class="ion-margin">Last Updated:&nbsp; {{ lastUpdated }}</ion-label>
   </ion-toolbar>
 </ion-footer>
